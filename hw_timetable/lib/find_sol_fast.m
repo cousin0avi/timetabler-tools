@@ -95,7 +95,15 @@ for ii=1:numel(ii_vec)
     touch_hw(ii) = sum(b(d==0));
 end
 
-id = cast(bi2de(id_bin),'uint64');
+t = uint64(1);
+id_t = uint64(0);
+two = uint64(2);
+for ii=1:numel(id_bin)
+    id_t = id_t + t*uint64(id_bin(ii));
+    t = t*two;
+end
+
+id = id_t;
 
 day_hw = cast(3-n_day.','double');
 day_var = var(day_hw);

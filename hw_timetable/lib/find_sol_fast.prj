@@ -1,7 +1,7 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2016a">
-  <configuration build-checksum="1736586545" file="D:\Tim\tim-forest\hw_timetable\lib\find_sol_fast.prj" location="D:\Tim\tim-forest\hw_timetable\lib" name="find_sol_fast" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="1241839699" file="C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\find_sol_fast.prj" location="C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib" name="find_sol_fast" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
-      <param.BuiltInstrumentedMex />
+      <param.BuiltInstrumentedMex>false</param.BuiltInstrumentedMex>
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
       <param.WorkingFolder>option.WorkingFolder.Project</param.WorkingFolder>
       <param.SpecifiedWorkingFolder />
@@ -38,7 +38,7 @@
       <param.PostCodeGenCommand />
       <param.mex.GenCodeOnly>false</param.mex.GenCodeOnly>
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
-      <param.RecursionLimit />
+      <param.RecursionLimit>100</param.RecursionLimit>
       <param.PreserveVariableNames>option.PreserveVariableNames.UserNames</param.PreserveVariableNames>
       <param.TargetLang>option.TargetLang.C</param.TargetLang>
       <param.EchoExpressions>true</param.EchoExpressions>
@@ -162,7 +162,7 @@
       <param.CodeReplacementLibrary />
       <param.DeprecatedCRLFlag />
       <param.SameHardware>true</param.SameHardware>
-      <param.Toolchain />
+      <param.Toolchain>Automatically locate an installed toolchain</param.Toolchain>
       <param.BuildConfiguration />
       <param.CustomToolchainOptions />
       <var.ToolchainSettingsVisible />
@@ -211,15 +211,15 @@
       <param.IndentStyle />
       <param.IndentSize />
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
-      <param.RecursionLimit />
+      <param.RecursionLimit>100</param.RecursionLimit>
       <param.IncludeTerminateFcn />
-      <param.GenerateExampleMain />
+      <param.GenerateExampleMain>option.GenerateExampleMain.GenerateCodeOnly</param.GenerateExampleMain>
       <param.PreserveVariableNames>option.PreserveVariableNames.UserNames</param.PreserveVariableNames>
       <param.TargetLang>option.TargetLang.C</param.TargetLang>
       <param.CCompilerOptimization />
       <param.CCompilerCustomOptimizations />
       <param.GenerateMakefile />
-      <param.BuildToolEnable />
+      <param.BuildToolEnable>false</param.BuildToolEnable>
       <param.MakeCommand />
       <param.TemplateMakefile />
       <param.BuildToolConfiguration />
@@ -679,26 +679,26 @@
       </unset>
     </profile>
     <param.objective>option.objective.c</param.objective>
-    <param.WorkflowStep>verifyCompatibility</param.WorkflowStep>
+    <param.WorkflowStep>generateCode</param.WorkflowStep>
     <param.TestSnippets>
       <item>hw_tt_many</item>
     </param.TestSnippets>
-    <param.DefaultImportExportVariable />
+    <param.DefaultImportExportVariable>config</param.DefaultImportExportVariable>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
     <param.outputfile>${PROJECT_ROOT}\find_sol_fast_mex.mexw64</param.outputfile>
-    <param.version />
-    <param.HasECoderFeatures>true</param.HasECoderFeatures>
+    <param.version>R2012a</param.version>
+    <param.HasECoderFeatures>false</param.HasECoderFeatures>
     <param.mex.mainhtml />
     <param.grt.mainhtml />
-    <param.CallGeneratedCodeFromTest>false</param.CallGeneratedCodeFromTest>
+    <param.CallGeneratedCodeFromTest>true</param.CallGeneratedCodeFromTest>
     <param.AutoInferDefaultFile />
-    <param.AutoInferUseVariableSize />
-    <param.AutoInferUseUnboundedSize />
-    <param.AutoInferVariableSizeThreshold />
-    <param.AutoInferUnboundedSizeThreshold />
-    <param.EnableFixedPointStep />
+    <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
+    <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
+    <param.AutoInferVariableSizeThreshold>1024</param.AutoInferVariableSizeThreshold>
+    <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>120487694</param.AnnotationChecksum>
+    <param.AnnotationChecksum>3789680518</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
@@ -706,14 +706,14 @@
     <var.DismissScreener>true</var.DismissScreener>
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\mex\find_sol_fast</var.gc.lastOutputRoot>
-    <var.gc.preBuildChecksum>3874822785</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>3678869087</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot>codegen\mex\find_sol_fast</var.cfi.lastOutputRoot>
-    <var.cfi.preBuildChecksum>3555005289</var.cfi.preBuildChecksum>
+    <var.cfi.preBuildChecksum>1063921885</var.cfi.preBuildChecksum>
     <var.lastCfiTestSnippet>hw_tt_many</var.lastCfiTestSnippet>
-    <var.outdatedOnRestore />
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\assign_hw.m&lt;/file&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\find_sol_fast.m&lt;/file&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\still_solve.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;808674426&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
-    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\assign_hw.m&lt;/file&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\find_sol_fast.m&lt;/file&gt;&lt;file&gt;D:\Tim\tim-forest\hw_timetable\lib\still_solve.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
-    <param.forceMexBuild>true</param.forceMexBuild>
+    <var.outdatedOnRestore>false</var.outdatedOnRestore>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\assign_hw.m&lt;/file&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\find_sol_fast.m&lt;/file&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\still_solve.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;798762653&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\assign_hw.m&lt;/file&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\find_sol_fast.m&lt;/file&gt;&lt;file&gt;C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\still_solve.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
+    <param.forceMexBuild>false</param.forceMexBuild>
     <param.configImportActive>false</param.configImportActive>
     <var.boundToGui>true</var.boundToGui>
     <param.mex.outputfile>find_sol_fast_mex</param.mex.outputfile>
@@ -724,7 +724,7 @@
     <param.UsePreconditions>false</param.UsePreconditions>
     <param.FeatureFlags />
     <param.FixedPointMode>option.FixedPointMode.None</param.FixedPointMode>
-    <param.AutoScaleLoopIndexVariables />
+    <param.AutoScaleLoopIndexVariables>false</param.AutoScaleLoopIndexVariables>
     <param.ComputedFixedPointData />
     <param.UserFixedPointData />
     <param.DefaultWordLength>16</param.DefaultWordLength>
@@ -754,15 +754,15 @@
     <param.EnableCodeEfficiencyChecks>false</param.EnableCodeEfficiencyChecks>
     <param.DefaultFixedPointSignedness>option.DefaultFixedPointSignedness.Automatic</param.DefaultFixedPointSignedness>
     <param.FixedPointTypeProposalMode>option.FixedPointTypeProposalMode.ProposeFractionLengths</param.FixedPointTypeProposalMode>
-    <param.EnableFixedPointStep />
-    <var.lastFixedPointAction />
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
+    <var.lastFixedPointAction>option.fixedPointAction.none</var.lastFixedPointAction>
     <var.lastSimContext />
     <var.lastVerifyContext />
     <param.fpDataRoot />
     <param.fpUserFileChecksum />
     <var.snapshotChecksum />
     <var.functionBlockSid />
-    <param.fptSignedness />
+    <param.fptSignedness>false</param.fptSignedness>
     <unset>
       <param.DefaultImportExportVariable />
       <param.UseGlobals />
@@ -950,36 +950,18 @@
       </file>
     </fileset.inputtypes>
     <build-deliverables>
-      <file location="D:\Tim\tim-forest\hw_timetable\lib" name="find_sol_fast_mex.mexw64" optional="false">D:\Tim\tim-forest\hw_timetable\lib\find_sol_fast_mex.mexw64</file>
+      <file location="C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib" name="find_sol_fast_mex.mexw64" optional="false">C:\Users\avi\Documents\work\timetabler\timetabler-tools\hw_timetable\lib\find_sol_fast_mex.mexw64</file>
     </build-deliverables>
     <workflow />
     <matlab>
       <root>C:\Program Files\MATLAB\R2016a</root>
       <toolboxes>
-        <toolbox name="fixedpoint" />
         <toolbox name="matlabcoder" />
-        <toolbox name="matlabhdlcoder" />
-        <toolbox name="embeddedcoder" />
       </toolboxes>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
         </matlabcoder>
-      </toolbox>
-      <toolbox>
-        <matlabhdlcoder>
-          <enabled>true</enabled>
-        </matlabhdlcoder>
-      </toolbox>
-      <toolbox>
-        <embeddedcoder>
-          <enabled>true</enabled>
-        </embeddedcoder>
       </toolbox>
     </matlab>
     <platform>
@@ -991,7 +973,7 @@
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>6.1</osver>
+      <osver>6.2</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>win64</arch>
