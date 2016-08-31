@@ -1,3 +1,4 @@
 hw_timetable/lib/codegen/*
 hw_timetable/2017/*
 *.mexw64
+*.asv

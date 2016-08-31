@@ -59,7 +59,7 @@ if flag_big
         
         [temp_id, temp_cell_hw,temp_day_hw,temp_touch_hw,temp_day_var,temp_touch_mean] = find_sol_fast_mex(subjects,idx_less,flag_avail,flag_hw,flag_check,id_text,hw_vec,ii_vec,period_vec,ic);
         
-        if thresh_touch_mean>=temp_touch_mean || thresh_day_var>=temp_day_var
+        if temp_touch_mean>=thresh_touch_mean || temp_day_var>=thresh_day_var
             continue
         end
         

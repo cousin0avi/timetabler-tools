@@ -26,10 +26,13 @@ for ii=1:numel(subs)
     flag_hw = false(size(flag_avail));
     
     idx = mod(idx_less(flag_avail==0),6)==1;
+    
+    
+    % The code thinks that when 2 lessons appear on consecutive days on P6
+    % then P1 then these form a double a period.
     if any(idx)
-        error('P6-P1 double period issue')
-        % The code thinks that when 2 lessons appear on consecutive days on P6
-        % then P1 then these form a double a period.
+        p6_p1 = strfind(mod(idx_less,6).',[0 1]) + 1;
+        flag_avail(p6_p1) = true;
     end
     
     % Count the number of available lessons

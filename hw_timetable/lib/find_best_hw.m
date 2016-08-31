@@ -7,11 +7,16 @@ d = sort(c);
 
 plot(d)
 %% Identify top 10 solutions
-
-idx = find(c<d(11));
-
-aa = zeros(numel(idx),10);
-bb = zeros(numel(ii_vec),numel(idx));
+if numel(d)>10
+    idx = find(c<d(11));
+    
+    aa = zeros(numel(idx),10);
+    bb = zeros(numel(ii_vec),numel(idx));
+else
+    idx = 1:numel(d);
+    aa = zeros(numel(idx),10);
+    bb = zeros(numel(ii_vec),numel(idx)); 
+end
 
 for ii=1:numel(idx);
     bb(:,ii) = soln.touch_hw{idx(ii)};
@@ -21,4 +26,4 @@ end
 %% Output results
 day_hw = aa.'
 touch_hw = bb
-
+idx
