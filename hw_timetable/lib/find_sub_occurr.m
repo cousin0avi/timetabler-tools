@@ -6,7 +6,7 @@ n1 = numel(soln.id);
 one_sixty = 1:60;
 sub_idx = one_sixty(form.ic==sub_ref);
 
-n_hw = sum(form.hw_vec==8);
+n_hw = sum(form.hw_vec==sub_ref);
 sub_1 = zeros(n1,n_hw);
 
 for ii=1:n1

@@ -2,20 +2,19 @@ clear all; close all
 addpath('lib')
 
 name_year = 'Y8';
-in_sheet  = '2017/8g.xls';
-out_sheet = '2017/8g.xls';
+in_sheet  = '2017/8b.xls';
+out_sheet = '2017/8b.xls';
 hw_alloc_xls = '2017/hw_alloc.xls';
 hw_alloc_range = 'A1:B11';
 
-nf1 = '8e';
-nf2 = '8F';
-nf3 = '8G';
-nf4 = '8H';
+nf1 = '8N';
+nf2 = '8P';
+nf3 = '8R';
+nf4 = '8T';
 
-t_small = 5;
+t_small = 30;
 t_big = 90;
 
-vec_share = [8,9,10];
 %% Create subjects structures
 form_1 = make_subjects_struct(in_sheet,nf1,hw_alloc_xls,name_year,hw_alloc_range);
 form_2 = make_subjects_struct(in_sheet,nf2,hw_alloc_xls,name_year,hw_alloc_range);
@@ -29,37 +28,52 @@ soln_3 = find_many_sol(form_3.subjects,form_3.hw_vec,form_3.ii_vec,form_3.period
 soln_4 = find_many_sol(form_4.subjects,form_4.hw_vec,form_4.ii_vec,form_4.period_vec,form_4.ic,4e4,t_small);
 
 %% Find MAT occurences
-count_mat_1 = find_sub_occurr(soln_1,form_1,8)
-count_mat_2 = find_sub_occurr(soln_2,form_2,8)
-count_mat_3 = find_sub_occurr(soln_3,form_3,8)
-count_mat_4 = find_sub_occurr(soln_4,form_4,8)
+idx1 = find(strcmp(form_1.subjects.id,'MAT')==1);
+idx2 = find(strcmp(form_2.subjects.id,'MAT')==1);
+idx3 = find(strcmp(form_3.subjects.id,'MAT')==1);
+idx4 = find(strcmp(form_4.subjects.id,'MAT')==1);
+
+count_mat_1 = find_sub_occurr(soln_1,form_1,idx1)
+count_mat_2 = find_sub_occurr(soln_2,form_2,idx2)
+count_mat_3 = find_sub_occurr(soln_3,form_3,idx3)
+count_mat_4 = find_sub_occurr(soln_4,form_4,idx4)
 
 %% Find MFL1 occurences
-count_mfl1_1 = find_sub_occurr(soln_1,form_1,9)
-count_mfl1_2 = find_sub_occurr(soln_2,form_2,9)
-count_mfl1_3 = find_sub_occurr(soln_3,form_3,9)
-count_mfl1_4 = find_sub_occurr(soln_4,form_4,9)
+idx1 = find(strcmp(form_1.subjects.id,'ML1')==1);
+idx2 = find(strcmp(form_2.subjects.id,'ML1')==1);
+idx3 = find(strcmp(form_3.subjects.id,'ML1')==1);
+idx4 = find(strcmp(form_4.subjects.id,'ML1')==1);
+
+count_mfl1_1 = find_sub_occurr(soln_1,form_1,idx1)
+count_mfl1_2 = find_sub_occurr(soln_2,form_2,idx2)
+count_mfl1_3 = find_sub_occurr(soln_3,form_3,idx3)
+count_mfl1_4 = find_sub_occurr(soln_4,form_4,idx4)
 
 %% Find MFL2 occurences
-count_mfl2_1 = find_sub_occurr(soln_1,form_1,10)
-count_mfl2_2 = find_sub_occurr(soln_2,form_2,10)
-count_mfl2_3 = find_sub_occurr(soln_3,form_3,10)
-count_mfl2_4 = find_sub_occurr(soln_4,form_4,10)
+idx1 = find(strcmp(form_1.subjects.id,'ML2')==1);
+idx2 = find(strcmp(form_2.subjects.id,'ML2')==1);
+idx3 = find(strcmp(form_3.subjects.id,'ML2')==1);
+idx4 = find(strcmp(form_4.subjects.id,'ML2')==1);
+
+count_mfl2_1 = find_sub_occurr(soln_1,form_1,idx1)
+count_mfl2_2 = find_sub_occurr(soln_2,form_2,idx2)
+count_mfl2_3 = find_sub_occurr(soln_3,form_3,idx3)
+count_mfl2_4 = find_sub_occurr(soln_4,form_4,idx4)
 
 %% Choose constraints
-n_mat = sum(form_1.hw_vec==8);
+n_mat = sum(form_1.hw_vec==find(strcmp(form_1.subjects.id,'MAT')==1));
 force_mat = zeros(1,n_mat);
 for ii=1:n_mat
     force_mat(ii) = input('Force a MAT hw to period: ');
 end
 
-n_ml1 = sum(form_1.hw_vec==9);
+n_ml1 = sum(form_1.hw_vec==find(strcmp(form_1.subjects.id,'ML1')==1));
 force_ml1 = zeros(1,n_ml1);
 for ii=1:n_ml1
     force_ml1(ii) = input('Force a MFL1 hw to period: ');
 end
 
-n_ml2 = sum(form_1.hw_vec==10);
+n_ml2 = sum(form_1.hw_vec==find(strcmp(form_1.subjects.id,'ML2')==1));
 force_ml2 = zeros(1,n_ml2);
 for ii=1:n_ml2
     force_ml2(ii) = input('Force a MFL2 hw to period: ');
