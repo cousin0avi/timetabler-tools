@@ -1,17 +1,31 @@
 function [id,cell_hw,day_hw,touch_hw,day_var,touch_mean] = find_sol_fast(subjects,idx_less,flag_avail,flag_hw,flag_check,id_text,hw_vec,ii_vec,period_vec,ic) %#codegen
 
 flag_end = false;
-n_day = 3*ones([10,1],'uint8');
- 
+n_day_orig = 3*ones([10,1],'uint8');
+n_day = n_day_orig;
+
 subjects_orig = subjects;
 idx_less_orig = idx_less;
 flag_avail_orig = flag_avail;
 flag_hw_orig = flag_hw;
 period_vec_orig = period_vec;
 
+%% If any HW have already been assigned then remove allocation from n_day
+for ii=1:numel(subjects.n_hw)
+    temp_periods = idx_less{ii}(flag_hw{ii});
+    
+    if ~isempty(temp_periods)
+        for jj=1:numel(temp_periods)         
+            a = ceil(cast(temp_periods(jj),'double')/6);
+            n_day_orig(a) = n_day_orig(a) - 1;
+        end
+    end
+end
+
+%% Solve
 while ~flag_end
     % initialise the problem
-    n_day = 3*ones([10,1],'uint8');
+    n_day = n_day_orig;
     subjects = subjects_orig;
     rand_vec = hw_vec(randperm(numel(hw_vec)));
     

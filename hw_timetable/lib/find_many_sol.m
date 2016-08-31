@@ -51,7 +51,7 @@ while toc<toc_time
 end
 
 if flag_big
-    [idx_bad,thresh_touch_mean,thresh_day_var] = identify_worest(soln);
+    [~,thresh_touch_mean,thresh_day_var] = identify_worest(soln);
     
     n = n_big;
     
@@ -90,10 +90,8 @@ if idx~=n
 end
 
 % Remove solutions that have poor metrics
-if idx>9.99e2
-    if ~flag_big
-        idx_bad = identify_worest(soln);
-    end
+if numel(soln.id)>9e3
+    idx_bad = identify_worest(soln);
     soln = remove_soln(soln,idx_bad);
 end
 end

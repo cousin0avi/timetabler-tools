@@ -1,9 +1,9 @@
 clear all;close all
 %% Params
-name_form = '7H';
-in_sheet = '2017/Y7G/7h.xls';
-out_sheet = '2017/7g.xls';
-look_up_script = 'look_up/y7_lt.m';
+name_form = '8H';
+in_sheet = '2017/Y8G/8h.xls';
+out_sheet = '2017/8g.xls';
+look_up_script = 'look_up/y8_lt.m';
 
 %% Read in iSAMS output
 [~,sw1] = xlsread(in_sheet,'SW1','B4:F9');

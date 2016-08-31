@@ -2,9 +2,9 @@ clear all; close all
 addpath('lib')
 
 name_year = 'Y7';
-name_form = '7N';
-in_sheet  = '2017/7b.xls';
-out_sheet = '2017/7b.xls';
+name_form = '7H';
+in_sheet  = '2017/7g.xls';
+out_sheet = '2017/7g.xls';
 hw_alloc_xls = '2017/hw_alloc.xls';
 hw_alloc_range = 'A1:B10';
 
@@ -47,7 +47,7 @@ hw_vec = vertcat(temp{:});
 clear('temp','subs','hw_alloc')
 
 %% Run solver
-soln = find_many_sol(subjects,hw_vec,ii_vec,period_vec,ic,2e4,300);
+soln = find_many_sol(subjects,hw_vec,ii_vec,period_vec,ic,4e4,300);
 
 %% Find the best and write solution
 write_best
