@@ -2,6 +2,8 @@ function [form_struct] = make_subjects_struct(in_sheet,name_form,hw_alloc_xls,na
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
 
+%FIXIT - sanity check required - do hw_alloc match sunject codes
+
 %% Identify all subjects in timetable
 [~,timetable] = xlsread(in_sheet,name_form,'A2:J7');
 [~,~,hw_alloc] = xlsread(hw_alloc_xls,name_year,hw_alloc_range);
