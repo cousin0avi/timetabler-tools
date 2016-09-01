@@ -22,15 +22,15 @@ form_3 = make_subjects_struct(in_sheet,nf3,hw_alloc_xls,name_year,hw_alloc_range
 form_4 = make_subjects_struct(in_sheet,nf4,hw_alloc_xls,name_year,hw_alloc_range);
 
 %% Add a priori infomoration
-force_hw_vec_1 = [2 29 37 56];
-force_hw_vec_2 = [2 29 37 55];
-force_hw_vec_3 = [2 29 37 55];
-force_hw_vec_4 = [1 29 37 55];
+force_hw_vec_1 = [ [14 41 58] [2 29] [37 53] [3 34] [56] ];
+force_hw_vec_2 = [ [14 41 58] [2 29] [37 53] [3 34] [55] ]; 
+force_hw_vec_3 = [ [14 41 58] [2 29] [37 53] [3 34] [55] ];
+force_hw_vec_4 = [ [14 41 58] [1 29] [37 53] [3 34] [55] ];
 
 [form_1.subjects,form_1.period_vec ] = force_hw(form_1.subjects,form_1.period_vec,form_1.ic,force_hw_vec_1);
-[form_2.subjects,form_2.period_vec ] = force_hw(form_2.subjects,form_2.period_vec,form_2.ic,force_hw_vec_1);
-[form_3.subjects,form_3.period_vec ] = force_hw(form_3.subjects,form_3.period_vec,form_3.ic,force_hw_vec_1);
-[form_4.subjects,form_4.period_vec ] = force_hw(form_4.subjects,form_4.period_vec,form_4.ic,force_hw_vec_1);
+[form_2.subjects,form_2.period_vec ] = force_hw(form_2.subjects,form_2.period_vec,form_2.ic,force_hw_vec_2);
+[form_3.subjects,form_3.period_vec ] = force_hw(form_3.subjects,form_3.period_vec,form_3.ic,force_hw_vec_3);
+[form_4.subjects,form_4.period_vec ] = force_hw(form_4.subjects,form_4.period_vec,form_4.ic,force_hw_vec_4);
 %% Run solver
 soln_1 = find_many_sol(form_1.subjects,form_1.hw_vec,form_1.ii_vec,form_1.period_vec,form_1.ic,4e4,t_small);
 soln_2 = find_many_sol(form_2.subjects,form_2.hw_vec,form_2.ii_vec,form_2.period_vec,form_2.ic,4e4,t_small);
