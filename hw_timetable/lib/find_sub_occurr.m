@@ -2,6 +2,11 @@ function [count_sub] = find_sub_occurr( soln,form,sub_ref )
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 
+if isempty(sub_ref)
+    count_sub = [];
+    return
+end
+
 n1 = numel(soln.id);
 one_sixty = 1:60;
 sub_idx = one_sixty(form.ic==sub_ref);

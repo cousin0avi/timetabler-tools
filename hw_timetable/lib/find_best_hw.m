@@ -29,4 +29,12 @@ end
 %% Output results
 day_hw = aa.'
 touch_hw = bb
-idx
+d = c(idx);
+
+if ~isrow(d)
+    d = d.';
+end
+if ~isrow(idx)
+    idx = idx.';
+end
+cc = [idx;d]

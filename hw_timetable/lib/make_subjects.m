@@ -9,7 +9,14 @@ subjects = struct('id','','n_hw',zeros(1,1,'uint8'),'n_avail',zeros(1,1,'uint8')
 idx_0 = zeros(n_mode,1,'uint8');
 
 v_hw = zeros(numel(subs),1,'uint8');
-v_hw(ismember(subs,hw_alloc(:,1))) = cast([hw_alloc{:,2}],'uint8');
+
+if ~all(ismember(hw_alloc(:,1),subs))
+   warning('TTT:HW_ALLOC','Some subjects in the allocation spreadsheet do not exist in the TT')
+   a = ismember(hw_alloc(:,1),subs);
+   v_hw(ismember(subs,hw_alloc(a,1))) = cast([hw_alloc{a,2}],'uint8');
+else
+    v_hw(ismember(subs,hw_alloc(:,1))) = cast([hw_alloc{:,2}],'uint8');
+end
 
 
 for ii=1:numel(subs)
